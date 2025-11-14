@@ -41,7 +41,8 @@ app.use("/api/v1/order", orderRoute);
 
 app.use(express.static(path.join(DIRNAME,"/client/dist")));
 app.use("*",(_,res) => {
-    res.sendFile(path.resolve(DIRNAME, "client","dist","index.html"));
+    // res.sendFile(path.resolve(DIRNAME, "client","dist","index.html"));
+    res.sendFile(path.resolve(DIRNAME, "Client","dist","index.html"));
 });
 
 
