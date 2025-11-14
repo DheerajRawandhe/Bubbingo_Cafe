@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node Server/index.ts",
      "stripe":"stripe listen --forward-to localhost:8000/api/v1/order/webhook",
-     "build":"npm install && npm install --prefix Client && npm run build --prefix Client",
+     "build":"npm install && npm install --prefix Client && npm run build --prefix Client && tsc -b",
     "start": "node Server/index.ts"
   },
   "keywords": [],
