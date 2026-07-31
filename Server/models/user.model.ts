@@ -18,6 +18,8 @@ export interface IUser {
     verificationTokenExpiresAt?:Date
 }
 
+
+
 export interface IUserDocument extends IUser, Document {
     createdAt:Date;
     updatedAt:Date;
@@ -28,10 +30,12 @@ const userSchema = new mongoose.Schema<IUserDocument>({
         type: String,
         required: true
     },
+
     email: {
         type: String,
         required: true
     },
+    
     password: {
         type: String,
         required: true
@@ -66,6 +70,7 @@ const userSchema = new mongoose.Schema<IUserDocument>({
         type:Boolean,
         default:false
     },
+    
     resetPasswordToken:String,
     resetPasswordTokenExpiresAt:Date,
     verificationToken:String,

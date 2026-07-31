@@ -8,6 +8,7 @@ import { generateToken } from "../utils/generateToken";
 import { sendPasswordResetEmail, sendResetSuccessEmail, sendVerificationEmail, sendWelcomeEmail } from "../mailtrap/email";
 
 
+
 export const signup = async (req: Request, res: Response) => {
     try {
         const { fullname, email, password, contact } = req.body;
@@ -19,6 +20,7 @@ export const signup = async (req: Request, res: Response) => {
                 message: "User already exist with this email"
             })
         }
+
         const hashedPassword = await bcrypt.hash(password, 10);
         const verificationToken =  generateVerificationCode();
 
@@ -32,7 +34,7 @@ export const signup = async (req: Request, res: Response) => {
 
         })
         generateToken(res,user);
-
+        
         await sendVerificationEmail(email, verificationToken);
 
         const userWithoutPassword = await User.findOne({ email }).select("-password");
@@ -138,9 +140,9 @@ export const forgotPassword = async (req: Request, res: Response) => {
                 message: "User doesn't exist"
             });
         }
-
+            
         const resetToken = crypto.randomBytes(40).toString('hex');
-      const resetTokenExpiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+        const resetTokenExpiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
       
         user.resetPasswordToken = resetToken;
         user.resetPasswordTokenExpiresAt = resetTokenExpiresAt;

@@ -2,6 +2,7 @@ import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 
+
 const About = () => {
   return (
     <div className="bg-white text-gray-800 px-6 md:px-16 lg:px-28 py-16">

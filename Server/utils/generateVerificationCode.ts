@@ -7,7 +7,7 @@ export const generateVerificationCode = (length = 6): string => {
     for (let i = 0; i < length; i++) {
       verificationCode += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
-  
+    
     return verificationCode;
 }; 
 

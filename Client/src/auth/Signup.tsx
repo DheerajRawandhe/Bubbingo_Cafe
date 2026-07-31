@@ -102,16 +102,16 @@ const Signup = () => {
         </div>
 
           <div className="mb-10">
-            {loading ? (
+            {/* {loading ? (
               <Button disabled variant="outline" className="w-full bg-orange hover:bg-hoverOrange">
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Please wait
               </Button>
-            ) : (
+            ) : ( */}
               <Button type="submit" variant="outline" className=" w-full bg-orange hover:bg-hoverOrange">
                 Sign Up
               </Button>
-            )}
+            {/* )} */}
           </div>
           <Separator />
           <p className="mt-2 text-center">
